@@ -3,6 +3,7 @@ import Button from './../components/button';
 import HeroExperience from './../components/HeroModels/HeroExperience';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react"
+import 
 
 
 const Hero = () => {
@@ -53,6 +54,7 @@ const Hero = () => {
                     <HeroExperience/>
                 </div>
             </figure>
+            <AnimatedCounter />
         </div>
     </section>
   )

@@ -6,6 +6,10 @@ const button = ({ text, className}) => {
     onClick={(e) => {e.preventDefault()
       const target = document.getElementById('counter')
       if (target && id){
+          const offset = window.innerHeight * 0.15;
+          const top = target.getBoundClientReact().top + window.scrollY - offset;
+          
+          window.scrollTo({ top, behaviour: "smooth" })
       }
 
     }}
