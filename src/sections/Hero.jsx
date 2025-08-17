@@ -3,7 +3,6 @@ import Button from './../components/button';
 import HeroExperience from './../components/HeroModels/HeroExperience';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react"
-import 
 
 
 const Hero = () => {
@@ -47,7 +46,7 @@ const Hero = () => {
                     text="See My Work"
                     />
                 </div>
-            </header>
+            </header>~
             {/*RIGHT: 3D MODEL*/}
             <figure>
                 <div className="hero-3d-layout">

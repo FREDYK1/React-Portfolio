@@ -1,6 +1,6 @@
 import React from 'react'
 
-const button = ({ text, className}) => {
+const button = ({ text, className, id}) => {
   return (
     <a 
     onClick={(e) => {e.preventDefault()

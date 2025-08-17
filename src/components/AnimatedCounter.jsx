@@ -1,9 +1,9 @@
 
-const AnimatedCounter = () =>{
+const AnimatedCounter = () => {
     return (
         <>
             <div>Animated Counter</div>
-        <>
+        </>
     );
 }
 
