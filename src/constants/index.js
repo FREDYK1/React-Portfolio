@@ -12,3 +12,23 @@ export const counterItems = [
     { value: 2, suffix: "+", label: "Completed Projects" },
     { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
+
+export const navLinks = [
+    {
+        name: "Work",
+        link: "#work"
+    },
+    {
+        name: "Experience",
+        link: "#experience"
+    },
+    {
+        name: "Skills",
+        link: "#skills"
+    },
+    {
+        name: "Testimonials",
+        link: "#testimonials"
+    }
+
+]

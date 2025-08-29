@@ -14,42 +14,55 @@ const ShowcaseSection = () => {
 
 
     useGSAP(() => {
+        // Main section fade in
         gsap.fromTo(sectionRef.current, 
-            {opacity: 0},
-            {opacity: 1, duration: 1.5},
-        )
-        
-        const project = [project1Ref.current, project2Ref.current, project3Ref.current];
-
-        project.forEach((card, index) => {
-        gsap.fromTo(
-            card,
-            {
-                y:50,
-                opacity:0
-                
-            },
-            {
-                y:0, 
-                opacity:1,
-                duration:1, 
-                delay:0.3 * (index + 1),
-                ScrollTrigger: {
-                    trigger: card,
-                    start: 'top bottom-=100'
+            { opacity: 0, y: 50 },
+            { 
+                opacity: 1, 
+                y: 0,
+                duration: 1.5,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
                 }
             }
-        )
-    });
+        );
+        
+        // Project cards animation
+        const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
 
-    })
+        projects.forEach((card, index) => {
+            if (card) {
+                gsap.fromTo(
+                    card,
+                    {
+                        y: 100,
+                        opacity: 0
+                    },
+                    {
+                        y: 0, 
+                        opacity: 1,
+                        duration: 1, 
+                        delay: 0.2 * index,
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            end: 'bottom 20%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            }
+        });
+    }, []);
   return (
     <section id="work" ref={sectionRef} className="app-showcase">
         <div className="w-full">
             <div className="showcaseLayout flex flex-col md:flex-row md:gap-8">
                 {/* LEFT */}
                 <div className="first-project-wrapper md:w-1/2" ref={project1Ref}>
-                    <div className= "image-wrapper">
+                    <div className="image-wrapper">
                         <img src="/images/project1.png" alt="Ryde" />
                     </div>
                     <div className="text-content">
@@ -62,7 +75,7 @@ const ShowcaseSection = () => {
                     </div>
                 </div>
                 {/* RIGHT */}
-                <div className="project-list-wrapper md:w-1/2 flex flex-col md:gap-6 gap-4 overflow-hidden" ref={project2Ref}>
+                <div className="project-list-wrapper md:w-1/2 flex flex-col gap-4 md:gap-6" ref={project2Ref}>
                     <div className="project">
                         <div className="image-wrapper bg-[#ffefdb]">
                             <img src="/images/project2.png" alt="Library Management Platform" />
