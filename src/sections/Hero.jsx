@@ -54,8 +54,8 @@ const Hero = () => {
                     <HeroExperience/>
                 </div>
             </figure>
-            <AnimatedCounter />
         </div>
+        <AnimatedCounter />
     </section>
   )
 }
