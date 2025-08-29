@@ -32,3 +32,17 @@ export const navLinks = [
     }
 
 ]
+
+export const logos = [
+    {imgPath: "/images/logos/company-logo-1.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-2.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-3.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-4.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-5.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-6.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-7.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-8.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-9.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-10.png", alt: "Airbnb"},
+    {imgPath: "/images/logos/company-logo-11.png", alt: "Airbnb"},
+]
