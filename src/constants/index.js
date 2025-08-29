@@ -46,3 +46,21 @@ export const logos = [
     {imgPath: "/images/logos/company-logo-10.png", alt: "Airbnb"},
     {imgPath: "/images/logos/company-logo-11.png", alt: "Airbnb"},
 ]
+
+export const abilities = [
+    {
+        title: "Problem-Solving & Technical Curiosity",
+        description: "consistently dive deep into learning algorithms, building scrapers, and exploring frameworks like React, Django, and AI/ML. This shows strong analytical skills and persistence in tackling technical challenges.",
+        icon: "/images/seo.png"
+    },
+    {
+        title: "Collaboration & Teamwork",
+        description: "actively engage in team projects, contribute to open-source, and participate in hackathons. This highlights effective communication and the ability to work well with others to achieve common goals.",
+        icon: "/images/chat.png"
+    },
+    {
+        title: "Adaptability & Continuous Learning",
+        description: "demonstrate a commitment to continuous improvement by seeking feedback, learning new technologies, and adapting to changing project requirements.",
+        icon: "/images/code.svg"
+    }
+];
