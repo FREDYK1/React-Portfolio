@@ -64,3 +64,28 @@ export const abilities = [
         icon: "/images/code.svg"
     }
 ];
+
+export const expCards = [
+    {
+        review: "An amazing learning experience that allowed me to apply theoretical knowledge to real-world problems. The mentorship I received was invaluable and significantly accelerated my growth as a developer.",
+        imgPath: "/images/exp2.png",
+        logoPath: "/images/logo2.png",
+        title: "Intern",
+        company: "TouchStack Technologies",
+        date: "May - August 2025",
+        responsibilities:["Assisted in the development of a mobile application."]
+    },
+    {
+        review: "Great place to work and learn. The collaborative environment fostered innovation and professional development. I appreciated the opportunity to implement agile methodologies and work with talented professionals who were always willing to share their knowledge.",
+        imgPath: "/images/exp1.png",
+        logoPath: "/images/logo1.png",
+        title: "Scrum Master",
+        date: "June 2025 - Present",
+        company: "Solution Space",
+        responsibilities:[
+            "Led Agile ceremonies and facilitated team collaboration.",
+            "Coached team members on best practices and methodologies.",
+            "Implemented process improvements to enhance team productivity."
+        ],
+    },
+]
