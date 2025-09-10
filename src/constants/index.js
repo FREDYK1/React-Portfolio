@@ -73,7 +73,8 @@ export const expCards = [
         title: "Intern",
         company: "TouchStack Technologies",
         date: "May - August 2025",
-        responsibilities:["Assisted in the development of a mobile application."]
+        responsibilities:["Collaborated with Senior Developers to improve my backend skills", "Developed company search software to look for for companies in a vicinity", 
+        ]
     },
     {
         review: "Great place to work and learn. The collaborative environment fostered innovation and professional development. I appreciated the opportunity to implement agile methodologies and work with talented professionals who were always willing to share their knowledge.",
