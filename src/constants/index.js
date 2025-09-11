@@ -90,3 +90,30 @@ export const expCards = [
         ],
     },
 ]
+
+export const techStackIcons = [
+    {
+        name: "Python Developer",
+        modelPath: "/public/models/python-transformed.glb",
+        scale: 1,
+        rotation: [0, 0, 0],
+    },
+    {
+        name: "React Developer",
+        modelPath: "/public/models/react_logo-transformed.glb",
+        scale: 1,
+        rotation: [0, 0, 0],
+    },
+    {        
+        name: "Three.js Developer",
+        modelPath: "/public/models/three.js-transformed.glb",
+        scale: 1,
+        rotation: [0, 0, 0],
+    },
+    {
+        name: "Node.js Developer",
+        modelPath: "/public/models/node-transformed.glb",
+        scale: 1,
+        rotation: [0, 0, 0],
+    },
+]
