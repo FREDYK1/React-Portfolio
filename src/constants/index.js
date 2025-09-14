@@ -123,3 +123,8 @@ export const techStackIcons = [
     rotation: [0, -Math.PI / 4, 0],
   },
 ]
+
+export const Testimonials = [
+    {},
+
+]
