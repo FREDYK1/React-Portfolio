@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { socialImgs } from './../constants/index';
+import BlogModal from '../components/BlogModal';
 
 const Footer = () => {
+  const [blogOpen, setBlogOpen] = useState(false);
   return (
     <footer className="footer"> 
         <div className="footer-container">
             <div className="flex flex-col items-center justify-center w-full">
-                <a href="" className="text-center w-full">Visit my blog</a>
+                <button
+                  className="text-center w-full underline hover:text-blue-400 transition-colors"
+                  onClick={() => setBlogOpen(true)}
+                >
+                  Visit my blog
+                </button>
             </div>
             <div className="socials">
                 {socialImgs.map((img) => (
@@ -21,6 +28,7 @@ const Footer = () => {
                 </p>
             </div>
         </div>
+        <BlogModal open={blogOpen} onClose={() => setBlogOpen(false)} />
     </footer>
   )
 }

@@ -63,14 +63,14 @@ const ShowcaseSection = () => {
                 {/* LEFT */}
                 <div className="first-project-wrapper md:w-1/2" ref={project1Ref}>
                     <div className="image-wrapper">
-                        <img src="/images/project1.png" alt="Ryde" />
+                        <img src="/images/edblinkx-project.png" alt="Ryde" />
                     </div>
                     <div className="text-content">
                         <h2>
-                            On-Demand Rides Made Simple with a PowerFull, User-Friendly App called Ryde
+                            Edblinkx Empire Limited Web Application
                         </h2>
                         <p className="text-white-50 md:text-xl">
-                            An app built with React Native, Expo, & TailwindCSS for a fast, user-friendly experience.
+                            An app built with React, & TailwindCSS for a fast, and Django Rest Framework user-friendly experience.
                         </p>
                     </div>
                 </div>
@@ -78,15 +78,15 @@ const ShowcaseSection = () => {
                 <div className="project-list-wrapper md:w-1/2 flex flex-col gap-4 md:gap-6" ref={project2Ref}>
                     <div className="project">
                         <div className="image-wrapper bg-[#ffefdb]">
-                            <img src="/images/project2.png" alt="Library Management Platform" />
+                            <img src="/images/django-project.png" alt="Library Management Platform" />
                         </div>
-                        <h2>Library Management Platform</h2>
+                        <h2>A Fully Functional Django Ecommerce Platform</h2>
                     </div>
                     <div className="project" ref={project3Ref}>
                         <div className="image-wrapper bg-[#ffe7eb]">
-                            <img src="/images/project3.png" alt="YC Directory" />
+                            <img src="/images/webscrapper-website.png" alt="YC Directory" />
                         </div>
-                        <h2>YC Directory- A startup Showcase</h2>
+                        <h2>Google Maps WebScrapper - Scrape Info about Places Around You</h2>
                     </div>
                 </div>
             </div>

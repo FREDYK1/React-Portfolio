@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 const GlowCard = ({ card, index, children }) => {
   // refs for all the cards
@@ -41,7 +41,39 @@ const GlowCard = ({ card, index, children }) => {
       <div className="mb-5">
         <p className="text-white-50 text-lg">{card.review}</p>
       </div>
-      {children}
+      {children && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {Array.isArray(children)
+            ? children.map((child) =>
+                child.type === "img"
+                  ? React.cloneElement(child, {
+                      style: {
+                        width: "80px",
+                        height: "80px",
+                        objectFit: "contain",
+                        ...child.props.style,
+                      },
+                    })
+                  : child
+              )
+            : children && children.type === "img"
+            ? React.cloneElement(children, {
+                style: {
+                  width: "80px",
+                  height: "80px",
+                  objectFit: "contain",
+                  ...children.props.style,
+                },
+              })
+            : children}
+        </div>
+      )}
     </div>
   );
 };

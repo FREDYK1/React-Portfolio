@@ -8,9 +8,9 @@ export const words = [
 
 export const counterItems = [
     { value: 2, suffix: "+", label: "Years of Experience" },
-    { value: 200, suffix: "+", label: "Satisfied Clients" },
-    { value: 2, suffix: "+", label: "Completed Projects" },
-    { value: 90, suffix: "%", label: "Client Retention Rate" },
+    { value: 100, suffix: "%", label: "Delivery Rate" },
+    { value: 20, suffix: "+", label: "Completed Projects" },
+    { value: "3", suffix: "+", label: "Grade Point Average" },
 ];
 
 export const navLinks = [
@@ -26,25 +26,20 @@ export const navLinks = [
         name: "Skills",
         link: "#skills"
     },
-    {
-        name: "Testimonials",
-        link: "#testimonials"
-    }
-
 ]
 
 export const logos = [
-    {imgPath: "/images/logos/company-logo-1.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-2.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-3.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-4.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-5.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-6.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-7.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-8.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-9.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-10.png", alt: "Airbnb"},
-    {imgPath: "/images/logos/company-logo-11.png", alt: "Airbnb"},
+    {
+        imgPath: "/images/logos/touchstack-logo.svg",
+        alt: "TouchStack Technologies"
+    },
+    {   
+        imgPath: "/images/logos/solution-space-logo.svg", 
+        alt: "Solution Space"},
+    {
+        imgPath: "/images/logos/edblinkx.svg", 
+        alt: "edblinkx empire limited"
+    },
 ]
 
 export const abilities = [
@@ -68,8 +63,8 @@ export const abilities = [
 export const expCards = [
     {
         review: "An amazing learning experience that allowed me to apply theoretical knowledge to real-world problems. The mentorship I received was invaluable and significantly accelerated my growth as a developer.",
-        imgPath: "/images/exp2.png",
-        logoPath: "/images/logo2.png",
+        imgPath: "/images/logos/touchstack-logo.svg",
+        logoPath: "/images/logos/touchstack-logo.svg",
         title: "Intern",
         company: "TouchStack Technologies",
         date: "May - August 2025",
@@ -78,8 +73,8 @@ export const expCards = [
     },
     {
         review: "Great place to work and learn. The collaborative environment fostered innovation and professional development. I appreciated the opportunity to implement agile methodologies and work with talented professionals who were always willing to share their knowledge.",
-        imgPath: "/images/exp1.png",
-        logoPath: "/images/logo1.png",
+        imgPath: "/images/logos/solution-space-logo.svg",
+        logoPath: "/images/logos/solution-space-logo.svg",
         title: "Scrum Master",
         date: "June 2025 - Present",
         company: "Solution Space",
@@ -99,10 +94,22 @@ export const techStackIcons = [
         rotation: [0, 0, 0],
     },
     {
+        name: "Backend Developer",
+        modelPath: "/models/node-transformed.glb",
+        scale: 5,
+        rotation: [0, -Math.PI / 2, 0],
+    },
+    {
         name: "React Developer",
         modelPath: "/models/react_logo-transformed.glb",
         scale: 1,
         rotation: [0, 0, 0],
+    },
+    {
+    name: "Project Manager",
+    modelPath: "/models/git-svg-transformed.glb",
+    scale: 0.05,
+    rotation: [0, -Math.PI / 4, 0],
     },
     {        
         name: "Interactive Developer",
@@ -110,18 +117,6 @@ export const techStackIcons = [
         scale: 0.05,
         rotation: [0, 0, 3],
     },
-    {
-        name: "Backend Developer",
-        modelPath: "/models/node-transformed.glb",
-        scale: 5,
-        rotation: [0, -Math.PI / 2, 0],
-    },
-    {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
-  },
 ]
 
 export const Testimonials = [
