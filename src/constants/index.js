@@ -128,3 +128,21 @@ export const Testimonials = [
     {},
 
 ]
+
+export const socialImgs = [
+    {
+        name: "Instagram",
+        url: "https://www.instagram.com/frederick.kankam.360",
+        imgPath: "/images/insta.png"
+    },
+    {
+        name: "X",
+        url: "https://x.com/FredKankam360?s=09",
+        imgPath: "/images/x.png"
+    },
+    {
+        name: "LinkedIn",
+        url: "www.linkedin.com/in/frederick-kankam-85646a302",
+        imgPath: "/images/linkedin.png"
+    },
+]
