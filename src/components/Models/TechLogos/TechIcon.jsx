@@ -9,7 +9,7 @@ const TechIcon = ({ model }) => {
     const scene = useGLTF(model.modelPath);
     
     useEffect(() => {
-      if(model.name === "Interactive Developer") {
+      if(model.modelPath.includes('three.js')) {
         scene.scene.traverse((child => {
           if(child.isMesh && child.name === "Object_5") {
             child.material = new THREE.MeshStandardMaterial({
