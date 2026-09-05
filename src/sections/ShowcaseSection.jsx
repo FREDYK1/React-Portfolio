@@ -1,24 +1,61 @@
-import React from 'react'
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
+import { projects } from '../constants/index.js';
+import TitleHeader from '../components/TitleHeader';
+
 gsap.registerPlugin(ScrollTrigger);
+
+const projectImages = {
+    "Car Brokerage & Real Estate Platform": { src: "/images/edblinkx-project.png", alt: "Screenshot of the BLINKXDE car brokerage and real estate platform" },
+    "Google Maps Business Scraper": { src: "/images/webscrapper-website.png", alt: "Screenshot of the Google Maps business scraper web interface" },
+};
+
+const ProjectCard = ({ project }) => {
+    const image = projectImages[project.title];
+
+    return (
+        <div className="project-card card-border rounded-xl p-8 flex flex-col gap-4">
+            {image && (
+                <div className="image-wrapper rounded-xl overflow-hidden h-48">
+                    <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                </div>
+            )}
+            <div className="flex flex-col gap-1">
+                <h4 className="text-white text-xl font-semibold">{project.title}</h4>
+                <p className="text-white-50 text-sm">{project.date}</p>
+            </div>
+            <p className="text-white-50 text-lg">{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                    <span key={tag} className="hero-badge">{tag}</span>
+                ))}
+            </div>
+            {project.liveUrl && (
+                <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white-50 hover:text-white transition-colors duration-300 mt-auto"
+                >
+                    <span>View Live</span>
+                    <img src="/images/arrow-right.svg" alt="" className="size-3" />
+                </a>
+            )}
+        </div>
+    );
+};
 
 const ShowcaseSection = () => {
     const sectionRef = useRef(null);
-    const project1Ref = useRef(null);
-    const project2Ref = useRef(null);
-    const project3Ref = useRef(null);
-
 
     useGSAP(() => {
-        // Main section fade in
-        gsap.fromTo(sectionRef.current, 
+        gsap.fromTo(sectionRef.current,
             { opacity: 0, y: 50 },
-            { 
-                opacity: 1, 
+            {
+                opacity: 1,
                 y: 0,
                 duration: 1.5,
                 scrollTrigger: {
@@ -28,70 +65,56 @@ const ShowcaseSection = () => {
                 }
             }
         );
-        
-        // Project cards animation
-        const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
 
-        projects.forEach((card, index) => {
-            if (card) {
-                gsap.fromTo(
-                    card,
-                    {
-                        y: 100,
-                        opacity: 0
-                    },
-                    {
-                        y: 0, 
-                        opacity: 1,
-                        duration: 1, 
-                        delay: 0.2 * index,
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            end: 'bottom 20%',
-                            toggleActions: 'play none none reverse'
-                        }
+        gsap.utils.toArray(".project-card").forEach((card, index) => {
+            gsap.fromTo(
+                card,
+                { y: 100, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    delay: 0.1 * (index % 4),
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
                     }
-                );
-            }
+                }
+            );
         });
     }, []);
-  return (
-    <section id="work" ref={sectionRef} className="app-showcase">
-        <div className="w-full">
-            <div className="showcaseLayout flex flex-col md:flex-row md:gap-8">
-                {/* LEFT */}
-                <div className="first-project-wrapper md:w-1/2" ref={project1Ref}>
-                    <div className="image-wrapper">
-                        <img src="/images/edblinkx-project.png" alt="Ryde" />
-                    </div>
-                    <div className="text-content">
-                        <h2>
-                            Edblinkx Empire Limited Web Application
-                        </h2>
-                        <p className="text-white-50 md:text-xl">
-                            An app built with React, & TailwindCSS for a fast, and Django Rest Framework user-friendly experience.
-                        </p>
-                    </div>
-                </div>
-                {/* RIGHT */}
-                <div className="project-list-wrapper md:w-1/2 flex flex-col gap-4 md:gap-6" ref={project2Ref}>
-                    <div className="project">
-                        <div className="image-wrapper bg-[#ffefdb]">
-                            <img src="/images/django-project.png" alt="Library Management Platform" />
+
+    return (
+        <section id="work" ref={sectionRef} className="app-showcase">
+            <div className="w-full h-full md:px-10 px-5">
+                <TitleHeader
+                    title="Selected Work"
+                    sub="🛡️ Security & Cloud Projects First"
+                />
+                {Object.entries(projects).map(([category, items]) => (
+                    <div key={category} className="mt-16">
+                        <h3 className="text-2xl md:text-3xl font-semibold mb-8">{category}</h3>
+                        <div className="grid-3-cols">
+                            {items.map((project) => (
+                                <ProjectCard key={project.title} project={project} />
+                            ))}
                         </div>
-                        <h2>A Fully Functional Django Ecommerce Platform</h2>
                     </div>
-                    <div className="project" ref={project3Ref}>
-                        <div className="image-wrapper bg-[#ffe7eb]">
-                            <img src="/images/webscrapper-website.png" alt="YC Directory" />
-                        </div>
-                        <h2>Google Maps WebScrapper - Scrape Info about Places Around You</h2>
-                    </div>
-                </div>
+                ))}
+                <p className="text-white-50 text-center mt-16">
+                    More projects and source code on{' '}
+                    <a
+                        href="https://github.com/FREDYK1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white underline hover:text-blue-50 transition-colors duration-300"
+                    >
+                        github.com/FREDYK1
+                    </a>
+                </p>
             </div>
-        </div>
-    </section>
-  );
+        </section>
+    );
 }
 export default ShowcaseSection;
