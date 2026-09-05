@@ -1,6 +1,6 @@
 import React from 'react'
 import TitleHeader from './../components/TitleHeader';
-import { techStackIcons } from '../constants/index.js'
+import { techStackIcons, skillGroups } from '../constants/index.js'
 import TechIcon from './../components/Models/TechLogos/TechIcon';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
@@ -26,13 +26,13 @@ const TechStack = () => {
   return (
     <div id="skills" className="flex-center section-padding">
         <div className="w-full h-full md:px-10 px-5">
-            <TitleHeader 
-                title="My Preferred Tech Stack"
-                sub="The Skills I Bring to the Table"
+            <TitleHeader
+                title="Skills & Tech Stack"
+                sub="🧰 What I Work With"
             />
         <div className="tech-grid">
             {techStackIcons.map((icon) => (
-                <div key={icon.className} className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg">
+                <div key={icon.name} className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg">
                     <div className="tech-card-animated-bg"/>
                     <div className="tech-card-content">
                         <div className="tech-icon-wrapper">
@@ -41,6 +41,19 @@ const TechStack = () => {
                         <div className="padding-x w-full">
                             <p>{icon.name}</p>
                         </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div className="grid-3-cols mt-16">
+            {skillGroups.map((group) => (
+                <div key={group.category} className="card-border rounded-xl p-8 flex flex-col gap-4">
+                    <h3 className="text-white text-xl font-semibold">{group.category}</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {group.skills.map((skill) => (
+                            <span key={skill} className="hero-badge">{skill}</span>
+                        ))}
                     </div>
                 </div>
             ))}
