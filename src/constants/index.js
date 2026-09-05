@@ -30,8 +30,8 @@ export const navLinks = [
 
 // Employer logos shown in the scrolling marquee.
 // AmaliTech, Aurora Software Labs and Turntabl use simple placeholder
-// wordmarks (no official brand assets were supplied) — swap in real
-// logo files under public/images/logos/ if/when available.
+// wordmarks (no official brand assets were supplied). To swap in the real
+// logos, see public/images/logos/PLACEHOLDER-LOGOS.md.
 export const logos = [
     {
         imgPath: "/images/logos/amalitech-logo.svg",
@@ -180,6 +180,9 @@ export const techStackIcons = [
 ]
 
 // Certifications, most recent first. status: "completed" | "in-progress"
+// The `badge` images are placeholder icons, not the issuers' real badges
+// (no official assets were supplied). To swap in the real badges, see
+// public/images/certs/PLACEHOLDER-BADGES.md.
 export const certifications = [
     {
         name: "AWS Certified Cloud Practitioner (CLF-C02)",
