@@ -12,7 +12,12 @@ const AnimatedCounter = () => {
                             <div className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center">
                                 <div key={item.label}>
                                     <div className="counter-number text-white text-5xl font-bold mb-2">
-                                        <CountUp end={item.value} duration={2} suffix={item.suffix} />
+                                        <CountUp
+                                            end={item.value}
+                                            duration={2}
+                                            decimals={Number.isInteger(item.value) ? 0 : 2}
+                                            suffix={item.suffix}
+                                        />
                                     </div>
                                     <div className="text-white-50 text-lg">
                                         {item.label}

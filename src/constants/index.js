@@ -1,16 +1,18 @@
-export const words = [
-    {text:"Ideas", imgPath:"/images/ideas.svg"},
-    {text:"Concepts", imgPath:"/images/concepts.svg"},
-    {text:"Code", imgPath:"/images/code.svg"},
-    {text:"Designs", imgPath:"/images/designs.svg"},
-]
-
+// Rotating focus areas in the hero's animated word slider.
+// Kept to exactly 4 short items — the CSS keyframes in index.css
+// (.wrapper / @keyframes wordSlider) are hardcoded to 4 even steps.
+export const heroFocusAreas = [
+    "SIEM Concepts",
+    "Alert Triage",
+    "Threat Modelling",
+    "Incident Response",
+];
 
 export const counterItems = [
-    { value: 2, suffix: "+", label: "Years of Experience" },
-    { value: 100, suffix: "%", label: "Delivery Rate" },
-    { value: 20, suffix: "+", label: "Completed Projects" },
-    { value: "3", suffix: "+", label: "Grade Point Average" },
+    { value: 1, suffix: "+", label: "Years Professional Experience" },
+    { value: 5, suffix: "", label: "Certifications Earned" },
+    { value: 10, suffix: "+", label: "Projects Shipped" },
+    { value: 3.54, suffix: "/4.00", label: "CGPA, University of Ghana" },
 ];
 
 export const navLinks = [
@@ -23,108 +25,378 @@ export const navLinks = [
         link: "#experience"
     },
     {
+        name: "Certifications",
+        link: "#certifications"
+    },
+    {
         name: "Skills",
         link: "#skills"
     },
+    {
+        name: "Leadership",
+        link: "#leadership"
+    },
 ]
 
+// Employer logos shown in the scrolling marquee.
+// AmaliTech, Aurora Software Labs and Turntabl use simple placeholder
+// wordmarks (no official brand assets were supplied). To swap in the real
+// logos, see public/images/logos/PLACEHOLDER-LOGOS.md.
 export const logos = [
+    {
+        imgPath: "/images/logos/amalitech-logo.svg",
+        alt: "AmaliTech Ghana Ltd"
+    },
+    {
+        imgPath: "/images/logos/aurora-logo.svg",
+        alt: "Aurora Software Labs"
+    },
+    {
+        imgPath: "/images/logos/turntabl-logo.svg",
+        alt: "Turntabl"
+    },
+    {
+        imgPath: "/images/logos/solution-space-logo.svg",
+        alt: "Solution Space"
+    },
+    {
+        imgPath: "/images/logos/edblinkx.svg",
+        alt: "EDBLINKX Empire Limited"
+    },
     {
         imgPath: "/images/logos/touchstack-logo.svg",
         alt: "TouchStack Technologies"
-    },
-    {   
-        imgPath: "/images/logos/solution-space-logo.svg", 
-        alt: "Solution Space"},
-    {
-        imgPath: "/images/logos/edblinkx.svg", 
-        alt: "edblinkx empire limited"
     },
 ]
 
 export const abilities = [
     {
-        title: "Problem-Solving & Technical Curiosity",
-        description: "consistently dive deep into learning algorithms, building scrapers, and exploring frameworks like React, Django, and AI/ML. This shows strong analytical skills and persistence in tackling technical challenges.",
+        title: "Security-Minded Engineering",
+        description: "backed by AWS and Google Cybersecurity certifications and hands-on training in SIEM concepts, IAM and alert triage — building the habit of reading the code and cloud infrastructure that generates the alerts.",
         icon: "/images/seo.png"
     },
     {
-        title: "Collaboration & Teamwork",
-        description: "actively engage in team projects, contribute to open-source, and participate in hackathons. This highlights effective communication and the ability to work well with others to achieve common goals.",
-        icon: "/images/chat.png"
+        title: "Full-Stack Engineering Background",
+        description: "production experience across Java (Spring Boot), Python (FastAPI), Django, Next.js and React — shipping REST APIs, database migrations and CI/CD pipelines across three internships and a startup team.",
+        icon: "/images/code.svg"
     },
     {
-        title: "Adaptability & Continuous Learning",
-        description: "demonstrate a commitment to continuous improvement by seeking feedback, learning new technologies, and adapting to changing project requirements.",
-        icon: "/images/code.svg"
+        title: "Cloud Fundamentals & Team Leadership",
+        description: "hands-on with AWS EC2, S3 and IAM through a 12-week full-time cloud programme, paired with a track record leading teams — a 5-person Scrum team, a 15-person data-structures project, and a campus cybersecurity club I co-founded.",
+        icon: "/images/chat.png"
     }
 ];
 
+// Work experience, most recent first.
 export const expCards = [
     {
-        review: "An amazing learning experience that allowed me to apply theoretical knowledge to real-world problems. The mentorship I received was invaluable and significantly accelerated my growth as a developer.",
-        imgPath: "/images/logos/touchstack-logo.svg",
-        logoPath: "/images/logos/touchstack-logo.svg",
-        title: "Intern",
-        company: "TouchStack Technologies",
-        date: "May - August 2025",
-        responsibilities:["Collaborated with Senior Developers to improve my backend skills", "Developed company search software to look for for companies in a vicinity", 
+        title: "Cybersecurity Intern",
+        company: "AmaliTech Ghana Ltd",
+        date: "Aug – Oct 2026",
+        location: "Remote, Accra",
+        logoPath: "/images/logos/amalitech-logo.svg",
+        review: "Selected through a competitive five-stage process for AmaliTech's Voluntary Internship Programme, Cohort 3 — a full-time cybersecurity track built around real threat models, security tooling and incident response.",
+        responsibilities: [
+            "Completed a full-time (40 hrs/week) cybersecurity track covering threat modelling, security tooling and incident response",
+            "Delivering a capstone for a live community partner in a cross-functional team of 4–6 drawn from three tracks",
+            "Own the threat model and security review of the team's capstone beyond the track requirements",
         ]
     },
     {
-        review: "Great place to work and learn. The collaborative environment fostered innovation and professional development. I appreciated the opportunity to implement agile methodologies and work with talented professionals who were always willing to share their knowledge.",
-        imgPath: "/images/logos/solution-space-logo.svg",
+        title: "Software Engineer / COO",
+        company: "Aurora Software Labs",
+        date: "Dec 2025 – Present",
+        location: "Remote",
+        logoPath: "/images/logos/aurora-logo.svg",
+        review: "Split between backend engineering and operations at a student-run software startup — building the REST APIs behind ShopAurora on clean-architecture principles while leading the team's operational strategy.",
+        responsibilities: [
+            "Develop backend services and REST APIs on clean-architecture principles, improving scalability and maintainability",
+            "Lead operational strategy for ShopAurora, coordinating cross-functional development and product workflows",
+            "Apply secure development practices to protect data, APIs and user workflows",
+        ]
+    },
+    {
+        title: "Software Engineering Intern",
+        company: "Turntabl (TechOps Team)",
+        date: "Oct – Nov 2025",
+        location: "Achimota, Accra",
+        logoPath: "/images/logos/turntabl-logo.svg",
+        review: "Full-stack engineer on a title management system, replacing static mappings with a database-driven CRUD service across Next.js, Spring Boot and PostgreSQL.",
+        responsibilities: [
+            "Designed REST APIs supporting filtering, creation, update and soft deletion; migrated data into relational tables with zero data loss",
+            "Applied SOLID and DRY principles with design patterns including Factory, Builder, Strategy and Observer, cutting response time by 10%",
+            "Wrote unit, integration and frontend component tests",
+        ]
+    },
+    {
+        title: "Scrum Master & Full-Stack Developer",
+        company: "EDBLINKX Empire Ltd",
+        date: "Jun – Aug 2025",
+        location: "East Legon, Accra",
         logoPath: "/images/logos/solution-space-logo.svg",
-        title: "Scrum Master",
-        date: "June 2025 - Present",
-        company: "Solution Space",
-        responsibilities:[
-            "Led Agile ceremonies and facilitated team collaboration.",
-            "Coached team members on best practices and methodologies.",
-            "Implemented process improvements to enhance team productivity."
-        ],
+        review: "Led a 5-person team on the Solution Space Dev Team, running sprint planning, stand-ups and retrospectives while building the BLINKXDE platform end to end.",
+        responsibilities: [
+            "Delivered 100% of sprint goals across the engagement",
+            "Built the BLINKXDE platform (React, Django) unifying car brokerage, real estate and media modules",
+            "Designed PostgreSQL schemas and implemented CI/CD pipelines, cutting deployment time by 30%",
+        ]
+    },
+    {
+        title: "Software Engineering Intern",
+        company: "Touch Stack Technologies",
+        date: "May – Aug 2025",
+        location: "Osu, Accra",
+        logoPath: "/images/logos/touchstack-logo.svg",
+        review: "Owned an internal lead-generation tool end to end — a Python (FastAPI) and React application scraping Ghanaian business directories and enriching records via the Google Places API.",
+        responsibilities: [
+            "Built a web scraper against Ghanaian business directories to extract company records at scale",
+            "Integrated the Google Places API to enrich the dataset with business details from Google Maps",
+            "Shipped results consumable through a web interface or a CLI console",
+        ]
     },
 ]
 
 export const techStackIcons = [
     {
-        name: "Python Developer",
+        name: "Python",
         modelPath: "/models/python-transformed.glb",
         scale: 0.8,
         rotation: [0, 0, 0],
     },
     {
-        name: "Backend Developer",
+        name: "Backend & APIs",
         modelPath: "/models/node-transformed.glb",
         scale: 5,
         rotation: [0, -Math.PI / 2, 0],
     },
     {
-        name: "React Developer",
+        name: "React & Next.js",
         modelPath: "/models/react_logo-transformed.glb",
         scale: 1,
         rotation: [0, 0, 0],
     },
     {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
+        name: "Git & CI/CD",
+        modelPath: "/models/git-svg-transformed.glb",
+        scale: 0.05,
+        rotation: [0, -Math.PI / 4, 0],
     },
-    {        
-        name: "Interactive Developer",
+    {
+        name: "Interactive 3D (Three.js)",
         modelPath: "/models/three.js-transformed.glb",
         scale: 0.05,
         rotation: [0, 0, 3],
     },
 ]
 
-export const Testimonials = [
-    {},
+// Certifications, most recent first. status: "completed" | "in-progress"
+// The `badge` images are placeholder icons, not the issuers' real badges
+// (no official assets were supplied). To swap in the real badges, see
+// public/images/certs/PLACEHOLDER-BADGES.md.
+export const certifications = [
+    {
+        name: "AWS Certified Cloud Practitioner (CLF-C02)",
+        issuer: "Amazon Web Services",
+        date: "Aug 2026",
+        detail: "Scored 882/1000",
+        category: "Cloud",
+        badge: "/images/certs/aws-ccp-badge.svg",
+        status: "completed",
+    },
+    {
+        name: "Google Cybersecurity Professional Certificate",
+        issuer: "Google",
+        date: "May 2026",
+        category: "Security",
+        badge: "/images/certs/google-cybersecurity-badge.svg",
+        status: "completed",
+    },
+    {
+        name: "Google IT Support Professional Certificate",
+        issuer: "Google",
+        date: "2026",
+        category: "IT & Support",
+        badge: "/images/certs/google-itsupport-badge.svg",
+        status: "completed",
+    },
+    {
+        name: "Network Architecture Fundamentals",
+        issuer: "Cisco",
+        date: "Jan 2026",
+        category: "Networking",
+        badge: "/images/certs/cisco-network-badge.svg",
+        status: "completed",
+    },
+    {
+        name: "AWS Educate Cloud Badge",
+        issuer: "AWS Educate",
+        date: "2026",
+        category: "Cloud",
+        badge: "/images/certs/aws-educate-badge.svg",
+        status: "completed",
+    },
+    {
+        name: "TryHackMe SAL1 (Security Analyst Level 1)",
+        issuer: "TryHackMe",
+        date: "In progress",
+        category: "Security",
+        badge: "/images/certs/tryhackme-badge.svg",
+        status: "in-progress",
+    },
+];
 
-]
+export const training = {
+    title: "AWS re/Start Cloud Programme",
+    provider: "AmaliTech / AWS Talent Bridge",
+    date: "2026 · 12 weeks, full-time",
+    points: [
+        "Provisioned and administered EC2 instances on Amazon Linux 2023 with SSH key-pair authentication, security group rules and Apache deployment",
+        "Deployed a static website to Amazon S3 with bucket policies governing public access",
+        "Scored 90% on the AWS Management Console assessment",
+        "Passed the AWS Certified Cloud Practitioner (CLF-C02) exam on completion",
+    ],
+};
+
+export const skillGroups = [
+    {
+        category: "Security",
+        skills: ["Incident Detection & Response", "SIEM Concepts", "Alert Triage", "IAM", "Network Security", "Threat Modelling", "Penetration-Test Scoping"],
+    },
+    {
+        category: "Networking",
+        skills: ["OSI & TCP/IP", "IPv4 / IPv6", "TCP vs UDP", "Routing & Switching", "Network Segmentation"],
+    },
+    {
+        category: "Cloud (AWS)",
+        skills: ["EC2", "S3", "IAM", "Security Groups", "Shared Responsibility Model"],
+    },
+    {
+        category: "Languages",
+        skills: ["Python", "Java", "JavaScript", "SQL", "Bash"],
+    },
+    {
+        category: "Frameworks",
+        skills: ["Spring Boot", "FastAPI", "Django", "Next.js", "React"],
+    },
+    {
+        category: "Databases",
+        skills: ["PostgreSQL", "MySQL"],
+    },
+    {
+        category: "Tools",
+        skills: ["Git", "GitHub", "CI/CD", "Linux (Ubuntu 24.04)", "Figma", "TryHackMe"],
+    },
+];
+
+// Projects, security & cloud work first per current positioning.
+export const projects = {
+    "Security & Cloud": [
+        {
+            title: "Nexus Plaza — Penetration Test Scoping & Rules of Engagement",
+            date: "Aug 2026",
+            description: "A full pre-engagement scope worksheet and rules-of-engagement document for an internal penetration test: scope boundaries, authorisation chain, testing windows, escalation contacts and out-of-scope systems.",
+            tags: ["Penetration Testing", "Scoping", "Rules of Engagement"],
+        },
+        {
+            title: "FraudShield — On-Device Anti-Scam Widget",
+            date: "2026",
+            description: "A floating Android widget that flags likely scam messages in real time using a small language model (Gemma) running entirely on-device, so no message data leaves the handset. Targets mobile money fraud, a high-volume attack vector in Ghana.",
+            tags: ["Android", "On-Device AI", "Gemma", "Mobile Security"],
+        },
+        {
+            title: "Sankofa — Winner, AWS Hackathon 2026",
+            date: "2026",
+            description: "A cloud-hosted patient feedback platform accepting voice or text, widening participation across literacy levels and giving hospitals actionable service-gap data.",
+            tags: ["AWS", "Healthcare", "Accessibility"],
+        },
+        {
+            title: "FloodGuard",
+            date: "2026",
+            description: "A flood alert and early-warning tool built on AWS generative AI services during the AWS re/Start programme's hackathon.",
+            tags: ["AWS", "Generative AI", "Early Warning"],
+        },
+    ],
+    "Software Engineering": [
+        {
+            title: "ShopAurora",
+            date: "Jan 2026 – Present",
+            description: "A full-stack e-commerce platform with dynamic product management, REST APIs over structured data models and a PostgreSQL schema built for scale and data integrity.",
+            tags: ["Next.js", "REST APIs", "PostgreSQL"],
+            liveUrl: "https://shopaurora.africa",
+        },
+        {
+            title: "Hospital & Clinic Operations Optimizer",
+            date: "2026",
+            description: "Custom implementations of core data structures and algorithms (linked lists, heaps, trees, graphs) from scratch in Java, without built-in Java collections. Planning and Delivery Lead of a 15-person team.",
+            tags: ["Java", "Data Structures & Algorithms"],
+        },
+        {
+            title: "Holy Child Fundraising Platform",
+            date: "Nov 2025 – Jan 2026",
+            description: "A Next.js frame generator with Paystack payment integration for secure online donations during a school anniversary campaign.",
+            tags: ["Next.js", "Paystack"],
+            liveUrl: "https://holy-child-kappa.vercel.app",
+        },
+        {
+            title: "Engineer Title Management System",
+            date: "Oct – Nov 2025",
+            description: "Turntabl capstone: a full-stack CRUD system (Next.js, Spring Boot, PostgreSQL) with migrations, REST APIs and a full test suite.",
+            tags: ["Next.js", "Spring Boot", "PostgreSQL"],
+        },
+        {
+            title: "Car Brokerage & Real Estate Platform",
+            date: "Jun – Aug 2025",
+            description: "The BLINKXDE platform for EDBLINKX Empire Ltd, unifying car brokerage, real estate and media modules.",
+            tags: ["React", "Django", "PostgreSQL"],
+            liveUrl: "https://edblinkxempirelimited.netlify.app",
+        },
+        {
+            title: "Google Maps Business Scraper",
+            date: "May – Aug 2025",
+            description: "An internal lead-generation tool built at Touch Stack Technologies: scrapes Ghanaian business directories and enriches records via the Google Places API, usable as a web app or CLI.",
+            tags: ["Python", "FastAPI", "React", "Google Places API"],
+        },
+    ],
+};
+
+export const leadership = [
+    {
+        title: "Co-Founder & Inaugural Chair",
+        org: "Cyber Geeks Club, University of Ghana",
+        date: "Aug 2026 – Present",
+        description: "Co-founded a cybersecurity club with nine founding members and set a foundations-first curriculum with a weekly cadence before members split into specialist tracks.",
+    },
+    {
+        title: "Planning & Delivery Lead",
+        org: "15-Person University Data Structures Project",
+        date: "2026",
+        description: "Co-led five sub-teams building data structures and algorithms from scratch, setting the leadership structure, task tracker and repository organisation.",
+    },
+    {
+        title: "Peer Coding Mentor",
+        org: "University of Ghana",
+        date: "2025 – Present",
+        description: "Guides junior students through Python, Git and web development fundamentals.",
+    },
+    {
+        title: "Mentorship Volunteer",
+        org: "Barcamp Accra / Konnect",
+        date: "Jun 2024 – Present",
+        description: "Volunteers as a mentor at Barcamp Accra and Konnect community mentorship events.",
+    },
+];
 
 export const socialImgs = [
+    {
+        name: "GitHub",
+        url: "https://github.com/FREDYK1",
+        imgPath: "/images/github.svg"
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/frederick-kankam-85646a302",
+        imgPath: "/images/linkedin.png"
+    },
     {
         name: "Instagram",
         url: "https://www.instagram.com/frederick.kankam.360",
@@ -134,10 +406,5 @@ export const socialImgs = [
         name: "X",
         url: "https://x.com/FredKankam360?s=09",
         imgPath: "/images/x.png"
-    },
-    {
-        name: "LinkedIn",
-        url: "www.linkedin.com/in/frederick-kankam-85646a302",
-        imgPath: "/images/linkedin.png"
     },
 ]

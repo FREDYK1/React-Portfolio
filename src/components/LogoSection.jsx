@@ -34,10 +34,13 @@ const LogoSection = () => {
 
     return (
         <div className="md:my-20 my-10 relative">
+            <p className="sr-only">
+                Employers: {logos.map((logo) => logo.alt).join(", ")}
+            </p>
             <div className="gradient-edge"/>
             <div className="gradient-edge"/>
 
-            <div className="marquee h-52">
+            <div className="marquee h-52" aria-hidden="true">
                 <div className="marquee-box md:gap-12 gap-5">
                     {repeatedLogos.map((icon, idx) => (
                         <LogoIcon icon={icon} idx={idx} />
