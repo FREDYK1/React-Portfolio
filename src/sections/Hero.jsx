@@ -1,3 +1,4 @@
+import { heroFocusAreas } from './../constants/index';
 import Button from './../components/button';
 import HeroExperience from './../components/HeroModels/HeroExperience';
 import AnimatedCounter from './../components/AnimatedCounter';
@@ -24,6 +25,18 @@ const Hero = () => {
                     <div className="hero-text">
                         <h1>Software engineer</h1>
                         <h1>moving into security operations.</h1>
+                        <h1>Focused on
+                            <span className="slide">
+                                <span className="wrapper">
+                                    {heroFocusAreas.map((area) => (
+                                        <span key={area} className="flex items-center md:gap-3 gap-1 pb-2">
+                                            <span className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50 flex items-center justify-center text-[0.5em]">🛡️</span>
+                                            <span>{area}</span>
+                                        </span>
+                                    ))}
+                                </span>
+                            </span>
+                        </h1>
                     </div>
                     <p>
                         AWS Certified Cloud Practitioner &middot; Google Cybersecurity Certificate &middot; BSc Computer Science, University of Ghana

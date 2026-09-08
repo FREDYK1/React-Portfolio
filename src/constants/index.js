@@ -1,3 +1,13 @@
+// Rotating focus areas in the hero's animated word slider.
+// Kept to exactly 4 short items — the CSS keyframes in index.css
+// (.wrapper / @keyframes wordSlider) are hardcoded to 4 even steps.
+export const heroFocusAreas = [
+    "SIEM Concepts",
+    "Alert Triage",
+    "Threat Modelling",
+    "Incident Response",
+];
+
 export const counterItems = [
     { value: 1, suffix: "+", label: "Years Professional Experience" },
     { value: 5, suffix: "", label: "Certifications Earned" },
