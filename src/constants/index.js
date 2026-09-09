@@ -1,11 +1,11 @@
 // Rotating first word in the hero headline ("[word] Secure Systems").
-// Kept to exactly 4 short items — the CSS keyframes in index.css
+// Kept to exactly 4 items — the CSS keyframes in index.css
 // (.wrapper / @keyframes wordSlider) are hardcoded to 4 even steps.
 export const heroRotatingWords = [
-    "Engineering",
-    "Hardening",
-    "Fortifying",
-    "Shielding",
+    { text: "Engineering", imgPath: "/images/gear.svg" },
+    { text: "Hardening", imgPath: "/images/lock.svg" },
+    { text: "Fortifying", imgPath: "/images/fortress.svg" },
+    { text: "Shielding", imgPath: "/images/shield.svg" },
 ];
 
 export const counterItems = [
