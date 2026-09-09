@@ -278,6 +278,23 @@ section {
     @apply flex justify-center items-center w-52 h-60 relative;
   }
 
+  /* Gives flat-logo tech-stack cards (no 3D model) the same sense of
+     idle motion the Float-wrapped 3D models have. Lives on its own
+     element (not the hover-scaled wrapper) since a running animation
+     would otherwise fight a :hover transform on the same property. */
+  .tech-flat-logo {
+    animation: tech-logo-float 4s ease-in-out infinite;
+  }
+
+  @keyframes tech-logo-float {
+    0%, 100% {
+      transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(3deg);
+    }
+  }
+
   form {
     label {
       @apply block text-white-50 mb-2;
