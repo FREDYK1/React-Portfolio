@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,6 +17,28 @@ const NavBar = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
+    }, [])
+
+    // Highlights whichever nav link matches the section currently
+    // crossing a thin band near the middle of the viewport.
+    useEffect(() => {
+        const sections = navLinks
+            .map(({ link }) => document.getElementById(link.replace('#', '')))
+            .filter(Boolean);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
     }, [])
 
     useEffect(() => {
@@ -38,14 +61,17 @@ const NavBar = () => {
 
             <nav className="desktop">
                 <ul>
-                    { navLinks.map(({name, link}) => (
-                        <li key={name} className="group">
-                            <a href={link}>
-                                <span>{name}</span>
-                                <span className="underline"/>
-                            </a>
-                        </li>
-                    ))}
+                    { navLinks.map(({name, link}) => {
+                        const isActive = activeSection === link.replace('#', '');
+                        return (
+                            <li key={name} className="group">
+                                <a href={link} aria-current={isActive ? 'page' : undefined}>
+                                    <span className={isActive ? 'text-white' : ''}>{name}</span>
+                                    <span className={`underline ${isActive ? 'w-full' : ''}`}/>
+                                </a>
+                            </li>
+                        );
+                    })}
                 </ul>
             </nav>
 
@@ -72,17 +98,21 @@ const NavBar = () => {
         {menuOpen && (
             <nav id="mobile-nav-menu" className="lg:hidden bg-black-100 border-t border-black-50 mt-5">
                 <ul className="flex flex-col padding-x-lg py-5 gap-5">
-                    {navLinks.map(({ name, link }) => (
-                        <li key={name}>
-                            <a
-                                href={link}
-                                className="text-white-50 hover:text-white transition-colors duration-300 text-lg"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {name}
-                            </a>
-                        </li>
-                    ))}
+                    {navLinks.map(({ name, link }) => {
+                        const isActive = activeSection === link.replace('#', '');
+                        return (
+                            <li key={name}>
+                                <a
+                                    href={link}
+                                    aria-current={isActive ? 'page' : undefined}
+                                    className={`transition-colors duration-300 text-lg ${isActive ? 'text-white' : 'text-white-50 hover:text-white'}`}
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {name}
+                                </a>
+                            </li>
+                        );
+                    })}
                     <li>
                         <a
                             href="#contact"

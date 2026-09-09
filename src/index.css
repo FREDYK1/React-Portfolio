@@ -467,6 +467,9 @@ section {
     left: -100%;
   }
 }
+.marquee:hover .marquee-box {
+  animation-play-state: paused;
+}
 /* marquee end */
 
 .card {
