@@ -1,4 +1,4 @@
-import { heroFocusAreas } from './../constants/index';
+import { heroRotatingWords } from './../constants/index';
 import Button from './../components/button';
 import HeroExperience from './../components/HeroModels/HeroExperience';
 import AnimatedCounter from './../components/AnimatedCounter';
@@ -23,20 +23,16 @@ const Hero = () => {
             <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
                 <div className="flex flex-col gap-7">
                     <div className="hero-text">
-                        <h1>Software engineer</h1>
-                        <h1>moving into security operations.</h1>
-                        <h1>Focused on
+                        <h1 className="h-[48px] md:h-[78px]">
                             <span className="slide">
                                 <span className="wrapper">
-                                    {heroFocusAreas.map((area) => (
-                                        <span key={area} className="flex items-center md:gap-3 gap-1 pb-2">
-                                            <span className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50 flex items-center justify-center text-[0.5em]">🛡️</span>
-                                            <span>{area}</span>
-                                        </span>
+                                    {heroRotatingWords.map((word) => (
+                                        <span key={word}>{word}</span>
                                     ))}
                                 </span>
                             </span>
                         </h1>
+                        <h1>Secure Systems</h1>
                     </div>
                     <p>
                         AWS Certified Cloud Practitioner &middot; Google Cybersecurity Certificate &middot; BSc Computer Science, University of Ghana

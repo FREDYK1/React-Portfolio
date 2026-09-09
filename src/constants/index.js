@@ -1,18 +1,18 @@
-// Rotating focus areas in the hero's animated word slider.
+// Rotating first word in the hero headline ("[word] Secure Systems").
 // Kept to exactly 4 short items — the CSS keyframes in index.css
 // (.wrapper / @keyframes wordSlider) are hardcoded to 4 even steps.
-export const heroFocusAreas = [
-    "SIEM Concepts",
-    "Alert Triage",
-    "Threat Modelling",
-    "Incident Response",
+export const heroRotatingWords = [
+    "Engineering",
+    "Hardening",
+    "Fortifying",
+    "Shielding",
 ];
 
 export const counterItems = [
     { value: 1, suffix: "+", label: "Years Professional Experience" },
     { value: 5, suffix: "", label: "Certifications Earned" },
     { value: 10, suffix: "+", label: "Projects Shipped" },
-    { value: 3.54, suffix: "/4.00", label: "CGPA, University of Ghana" },
+    { value: 3.54, suffix: "", label: "CGPA, University of Ghana" },
 ];
 
 export const navLinks = [
@@ -39,16 +39,16 @@ export const navLinks = [
 ]
 
 // Employer logos shown in the scrolling marquee.
-// AmaliTech, Aurora Software Labs and Turntabl use simple placeholder
-// wordmarks (no official brand assets were supplied). To swap in the real
-// logos, see public/images/logos/PLACEHOLDER-LOGOS.md.
+// Turntabl still uses a placeholder wordmark (no official brand asset
+// was supplied). To swap it for the real logo, see
+// public/images/logos/PLACEHOLDER-LOGOS.md.
 export const logos = [
     {
-        imgPath: "/images/logos/amalitech-logo.svg",
+        imgPath: "/images/logos/amalitech-logo.png",
         alt: "AmaliTech Ghana Ltd"
     },
     {
-        imgPath: "/images/logos/aurora-logo.svg",
+        imgPath: "/images/logos/aurora-logo.png",
         alt: "Aurora Software Labs"
     },
     {
@@ -94,7 +94,7 @@ export const expCards = [
         company: "AmaliTech Ghana Ltd",
         date: "Aug – Oct 2026",
         location: "Remote, Accra",
-        logoPath: "/images/logos/amalitech-logo.svg",
+        logoPath: "/images/logos/amalitech-logo.png",
         review: "Selected through a competitive five-stage process for AmaliTech's Voluntary Internship Programme, Cohort 3 — a full-time cybersecurity track built around real threat models, security tooling and incident response.",
         responsibilities: [
             "Completed a full-time (40 hrs/week) cybersecurity track covering threat modelling, security tooling and incident response",
@@ -107,7 +107,7 @@ export const expCards = [
         company: "Aurora Software Labs",
         date: "Dec 2025 – Present",
         location: "Remote",
-        logoPath: "/images/logos/aurora-logo.svg",
+        logoPath: "/images/logos/aurora-logo.png",
         review: "Split between backend engineering and operations at a student-run software startup — building the REST APIs behind ShopAurora on clean-architecture principles while leading the team's operational strategy.",
         responsibilities: [
             "Develop backend services and REST APIs on clean-architecture principles, improving scalability and maintainability",
@@ -156,6 +156,10 @@ export const expCards = [
     },
 ]
 
+// Items with modelPath render as an interactive 3D model; items with
+// logoImg render as a flat logo instead (used for tools that have no
+// 3D asset). splunk-logo.svg and burpsuite-logo.svg are placeholder
+// badges — no official brand assets were supplied for either.
 export const techStackIcons = [
     {
         name: "Python",
@@ -164,10 +168,8 @@ export const techStackIcons = [
         rotation: [0, 0, 0],
     },
     {
-        name: "Backend & APIs",
-        modelPath: "/models/node-transformed.glb",
-        scale: 5,
-        rotation: [0, -Math.PI / 2, 0],
+        name: "SOC Analyst",
+        logoImg: "/images/logos/splunk-logo.svg",
     },
     {
         name: "React & Next.js",
@@ -182,10 +184,8 @@ export const techStackIcons = [
         rotation: [0, -Math.PI / 4, 0],
     },
     {
-        name: "Interactive 3D (Three.js)",
-        modelPath: "/models/three.js-transformed.glb",
-        scale: 0.05,
-        rotation: [0, 0, 3],
+        name: "Ethical Hacking",
+        logoImg: "/images/logos/burpsuite-logo.svg",
     },
 ]
 
