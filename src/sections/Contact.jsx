@@ -7,6 +7,7 @@ import ContactExperience from "../components/Models/contact/ContactExperience";
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // null | "success" | "error"
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -16,11 +17,13 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+    if (status) setStatus(null);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
+    setStatus(null);
 
     try {
       await emailjs.sendForm(
@@ -30,12 +33,13 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
+      setStatus("success");
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
+      setStatus("error");
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -93,7 +97,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -104,6 +108,19 @@ const Contact = () => {
                     </div>
                   </div>
                 </button>
+
+                <p role="status" aria-live="polite" className={status ? "text-sm font-medium" : "sr-only"}>
+                  {status === "success" && (
+                    <span className="text-[#65e0a0]">
+                      Thanks for reaching out — I'll get back to you soon.
+                    </span>
+                  )}
+                  {status === "error" && (
+                    <span className="text-[#fd5c79]">
+                      Something went wrong sending that. Please try again, or email me directly at fkwekukankam@gmail.com.
+                    </span>
+                  )}
+                </p>
               </form>
             </div>
           </div>
