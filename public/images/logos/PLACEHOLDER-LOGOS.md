@@ -1,26 +1,31 @@
-# Placeholder employer logos
+# Placeholder logos
 
-These three files are simple text-monogram placeholders, not the companies' real
-logos — no official brand assets were available when this was built:
+## Still placeholders
 
-| File | Company |
+These files are simple text-monogram placeholders, not the real logos — no
+official brand assets were available when this was built:
+
+| File | Represents |
 |---|---|
-| `amalitech-logo.svg` | AmaliTech Ghana Ltd |
-| `aurora-logo.svg` | Aurora Software Labs |
-| `turntabl-logo.svg` | Turntabl |
+| `turntabl-logo.svg` | Turntabl (employer) |
+| `splunk-logo.svg` | Splunk Enterprise (tech stack — "SOC Analyst" card) |
+| `burpsuite-logo.svg` | Burp Suite (tech stack — "Ethical Hacking" card) |
 
-## To replace one
+Cert badges under `../certs/` are placeholders too — see that folder.
 
-1. Get the real logo (square or near-square works best — it's displayed at a
-   fixed size in a white rounded box on the marquee, and at 80x80 on the
-   experience timeline).
-2. Save it over the existing file, **keeping the same filename** — e.g. drop a
-   new `amalitech-logo.svg` (or `.png`/`.jpg`, see below) into this folder.
+### To replace one
+
+1. Get the real logo (square or near-square works best).
+2. Save it over the existing file, **keeping the same filename**.
 3. If your replacement uses a different file extension (e.g. `.png` instead of
-   `.svg`), update the matching `imgPath` / `logoPath` value in
-   `src/constants/index.js` (search for `amalitech-logo`, `aurora-logo`, or
-   `turntabl-logo`) to match the new filename. Same filename + same
-   extension needs no code change at all.
+   `.svg`), update the matching `imgPath` / `logoPath` / `logoImg` value in
+   `src/constants/index.js` (search for the filename without its extension)
+   to match. Same filename + same extension needs no code change at all.
 
-`touchstack-logo.svg`, `solution-space-logo.svg`, and `edblinkx.svg` in this
-same folder are the real company logos already and don't need replacing.
+## Already real
+
+`amalitech-logo.png` and `aurora-logo.png` are the real company logos (the
+Aurora mark was cleaned up and upscaled from a very small source image — see
+git history on this file for the original). `touchstack-logo.svg`,
+`solution-space-logo.svg`, and `edblinkx.svg` are also the real company logos.
+None of these need replacing.
