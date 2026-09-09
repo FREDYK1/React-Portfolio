@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { leadership } from "../constants";
 import TitleHeader from "../components/TitleHeader";
+import HoverGlowCard from "../components/HoverGlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,15 +41,15 @@ const Leadership = () => {
                 />
                 <div className="grid-3-cols mt-16">
                     {leadership.map((role) => (
-                        <div
+                        <HoverGlowCard
                             key={`${role.org}-${role.title}`}
-                            className="leadership-card card-border rounded-xl p-8 flex flex-col gap-3"
+                            className="leadership-card rounded-xl p-8 flex flex-col gap-3"
                         >
                             <h3 className="text-white text-xl font-semibold">{role.title}</h3>
                             <p className="text-[#839CB5]">{role.org}</p>
                             <p className="text-white-50 text-sm">{role.date}</p>
                             <p className="text-white-50 text-lg">{role.description}</p>
-                        </div>
+                        </HoverGlowCard>
                     ))}
                 </div>
             </div>
