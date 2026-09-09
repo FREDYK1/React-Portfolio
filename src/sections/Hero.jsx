@@ -22,12 +22,15 @@ const Hero = () => {
             {/*LEFT: HERO CONTENT */}
             <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
                 <div className="flex flex-col gap-7">
-                    <div className="hero-text">
-                        <h1 className="h-[48px] md:h-[78px]">
-                            <span className="slide">
+                    <div className="hero-text md:text-[76px] text-[36px]">
+                        <h1 className="h-[58px] md:h-[100px]">
+                            <span className="slide h-[58px] md:h-[100px]">
                                 <span className="wrapper">
                                     {heroRotatingWords.map((word) => (
-                                        <span key={word}>{word}</span>
+                                        <span key={word.text} className="flex items-center md:gap-4 gap-2 pb-2">
+                                            <img src={word.imgPath} alt="" className="size-9 md:size-14 p-2 rounded-full bg-white-50 object-contain" />
+                                            <span>{word.text}</span>
+                                        </span>
                                     ))}
                                 </span>
                             </span>
@@ -35,7 +38,7 @@ const Hero = () => {
                         <h1>Secure Systems</h1>
                     </div>
                     <p>
-                        AWS Certified Cloud Practitioner &middot; Google Cybersecurity Certificate &middot; BSc Computer Science, University of Ghana
+                        BSc Computer Science (UG) &middot; AWS Certified Cloud Practitioner &middot; Google Cybersecurity Certified
                     </p>
                     <Button
                     className="md:w-80 md:h-16 w-60 h-12"

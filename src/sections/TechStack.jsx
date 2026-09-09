@@ -37,7 +37,9 @@ const TechStack = () => {
                     <div className="tech-card-content">
                         <div className="tech-icon-wrapper">
                             {icon.logoImg ? (
-                                <img src={icon.logoImg} alt={`${icon.name} logo`} className="w-32 h-32 md:w-36 md:h-36 object-contain" />
+                                <div className="w-32 h-32 md:w-36 md:h-36 transition-transform duration-300 group-hover:scale-110">
+                                    <img src={icon.logoImg} alt={`${icon.name} logo`} className="tech-flat-logo w-full h-full object-contain" />
+                                </div>
                             ) : (
                                 <TechIcon model={icon} />
                             )}
