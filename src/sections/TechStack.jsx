@@ -2,6 +2,7 @@ import React from 'react'
 import TitleHeader from './../components/TitleHeader';
 import { techStackIcons, skillGroups } from '../constants/index.js'
 import TechIcon from './../components/Models/TechLogos/TechIcon';
+import HoverGlowCard from './../components/HoverGlowCard';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -54,14 +55,14 @@ const TechStack = () => {
 
         <div className="grid-3-cols mt-16">
             {skillGroups.map((group) => (
-                <div key={group.category} className="card-border rounded-xl p-8 flex flex-col gap-4">
+                <HoverGlowCard key={group.category} className="rounded-xl p-8 flex flex-col gap-4">
                     <h3 className="text-white text-xl font-semibold">{group.category}</h3>
                     <div className="flex flex-wrap gap-2">
                         {group.skills.map((skill) => (
                             <span key={skill} className="hero-badge">{skill}</span>
                         ))}
                     </div>
-                </div>
+                </HoverGlowCard>
             ))}
         </div>
         </div>

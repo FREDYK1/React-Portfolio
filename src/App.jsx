@@ -1,6 +1,7 @@
 import Hero from './sections/Hero'
 import ShowcaseSection from './sections/ShowcaseSection';
 import NavBar from './components/NavBar'
+import ScrollProgress from './components/ScrollProgress'
 import LogoSection from './components/LogoSection'
 import FeatureCards from './sections/FeatureCards'
 import ExperienceSection from './sections/ExperienceSection';
@@ -13,6 +14,7 @@ import Footer from './sections/Footer';
 const App = () => {
   return (
     <>
+      <ScrollProgress />
       <NavBar />
       <Hero />
       <ShowcaseSection />

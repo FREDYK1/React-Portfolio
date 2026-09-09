@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { certifications, training } from "../constants";
 import TitleHeader from "../components/TitleHeader";
+import HoverGlowCard from "../components/HoverGlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,9 +56,9 @@ const Certifications = () => {
                             </h3>
                             <div className="grid-3-cols">
                                 {items.map((cert) => (
-                                    <div
+                                    <HoverGlowCard
                                         key={cert.name}
-                                        className="cert-card card-border rounded-xl p-6 flex items-center gap-4"
+                                        className="cert-card rounded-xl p-6 flex items-center gap-4"
                                     >
                                         <img
                                             src={cert.badge}
@@ -74,14 +75,14 @@ const Certifications = () => {
                                                 {cert.detail && ` · ${cert.detail}`}
                                             </p>
                                         </div>
-                                    </div>
+                                    </HoverGlowCard>
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="cert-card card-border rounded-xl p-8 mt-12 flex flex-col gap-4">
+                <HoverGlowCard className="cert-card rounded-xl p-8 mt-12 flex flex-col gap-4">
                     <div className="flex flex-col gap-1">
                         <h3 className="text-white text-2xl font-semibold">{training.title}</h3>
                         <p className="text-white-50">{training.provider} · {training.date}</p>
@@ -91,7 +92,7 @@ const Certifications = () => {
                             <li key={point} className="text-lg">{point}</li>
                         ))}
                     </ul>
-                </div>
+                </HoverGlowCard>
             </div>
         </section>
     );
