@@ -289,8 +289,43 @@ export const skillGroups = [
 ];
 
 // Projects, security & cloud work first per current positioning.
+// Optional project fields: role, repoUrl, liveUrl, image { src, alt, fit },
+// and for the one flagship card per category: featured, highlights, scenarios.
 export const projects = {
     "Security & Cloud": [
+        {
+            title: "SentryLab — Cloud Detection & Response Lab",
+            date: "Sep – Oct 2026",
+            role: "AmaliTech Cohort 3 Cybersecurity Capstone",
+            featured: true,
+            description: "A deliberately exposed AWS environment built entirely in Terraform, attacked with six MITRE ATT&CK techniques. Every attack is caught in CloudTrail, VPC Flow Logs or a Wazuh SIEM, and the highest-severity detection (someone switching CloudTrail off) fires a live SNS email alert.",
+            highlights: [
+                { value: "6/6", label: "Attacks detected" },
+                { value: "6", label: "ATT&CK techniques" },
+                { value: "~$0", label: "AWS spend (budget $20)" },
+                { value: "10", label: "Days, build to demo" },
+            ],
+            scenarios: [
+                { id: "T1110", name: "SSH brute force" },
+                { id: "T1046", name: "Port scan" },
+                { id: "T1548", name: "Privilege escalation" },
+                { id: "T1087", name: "IAM reconnaissance" },
+                { id: "T1562.008", name: "CloudTrail tampering" },
+                { id: "T1530", name: "S3 data exfiltration" },
+            ],
+            tags: ["AWS", "Terraform", "Wazuh SIEM", "CloudTrail", "VPC Flow Logs", "MITRE ATT&CK"],
+            repoUrl: "https://github.com/FREDYK1/sentrylab",
+            image: { src: "/images/sentrylab-architecture.webp", alt: "SentryLab AWS architecture: VPC, victim EC2, CloudTrail, CloudWatch, SNS alerting and a Wazuh SIEM", fit: "contain" },
+        },
+        {
+            title: "KASA Core — Twi Voice Assistant for Mobile Money",
+            date: "Sep 2026",
+            role: "USSD Engine Lead · Tɛkyerɛma Pa Hackathon 2026",
+            description: "An Android assistant that lets blind and low-vision users check balances and send mobile money by speaking Twi. It drives the carrier's own USSD menus and stops at the PIN prompt, so the app never sees, stores or sends the PIN.",
+            tags: ["Kotlin", "Jetpack Compose", "FastAPI", "Accessibility", "Security by Design"],
+            repoUrl: "https://github.com/FREDYK1/kasa-core",
+            image: { src: "/images/kasa-core-trust-boundary.webp", alt: "KASA Core trust-boundary diagram showing the PIN bypassing the app entirely", fit: "contain" },
+        },
         {
             title: "Nexus Plaza — Penetration Test Scoping & Rules of Engagement",
             date: "Aug 2026",
@@ -317,6 +352,13 @@ export const projects = {
         },
     ],
     "Software Engineering": [
+        {
+            title: "Q-Flow — Smart Queue Manager",
+            date: "Sep 2026",
+            role: "Team Lead · 6-Person AmaliTech Team",
+            description: "A virtual queue for walk-in services: scan a QR code, get a live wait estimate and an SMS when your turn nears. Led the team and designed its anti-queue-jumping control — rotating, single-use QR tokens.",
+            tags: ["Team Lead", "Requirements", "Threat Modelling", "JWT", "WebSockets"],
+        },
         {
             title: "ShopAurora",
             date: "Jan 2026 – Present",
