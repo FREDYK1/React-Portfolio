@@ -101,7 +101,11 @@ export const abilities = [
     }
 ];
 
-// Work experience, most recent first.
+// Work experience, most recent first. `companyUrl`, where present,
+// links the logo to the company's site (see the `logos` array above
+// for the same URLs). The EDBLINKX entry below displays the Solution
+// Space logo (the dev team, not EDBLINKX itself) and has no
+// companyUrl, matching the marquee.
 export const expCards = [
     {
         title: "Cybersecurity Intern",
@@ -109,6 +113,7 @@ export const expCards = [
         date: "Aug – Oct 2026",
         location: "Remote, Accra",
         logoPath: "/images/logos/amalitech-logo.png",
+        companyUrl: "https://www.amalitech.com",
         review: "Selected through a competitive five-stage process for AmaliTech's Voluntary Internship Programme, Cohort 3 — a full-time cybersecurity track built around real threat models, security tooling and incident response.",
         responsibilities: [
             "Completed a full-time (40 hrs/week) cybersecurity track covering threat modelling, security tooling and incident response",
@@ -122,6 +127,7 @@ export const expCards = [
         date: "Dec 2025 – Present",
         location: "Remote",
         logoPath: "/images/logos/aurora-logo.png",
+        companyUrl: "https://shopaurora.africa",
         review: "Split between backend engineering and operations at a student-run software startup — building the REST APIs behind ShopAurora on clean-architecture principles while leading the team's operational strategy.",
         responsibilities: [
             "Develop backend services and REST APIs on clean-architecture principles, improving scalability and maintainability",
@@ -135,6 +141,7 @@ export const expCards = [
         date: "Oct – Nov 2025",
         location: "Achimota, Accra",
         logoPath: "/images/logos/turntabl-logo.svg",
+        companyUrl: "https://turntabl.io",
         review: "Full-stack engineer on a title management system, replacing static mappings with a database-driven CRUD service across Next.js, Spring Boot and PostgreSQL.",
         responsibilities: [
             "Designed REST APIs supporting filtering, creation, update and soft deletion; migrated data into relational tables with zero data loss",
@@ -161,6 +168,7 @@ export const expCards = [
         date: "May – Aug 2025",
         location: "Osu, Accra",
         logoPath: "/images/logos/touchstack-logo.svg",
+        companyUrl: "https://touchstacktechnologies.com",
         review: "Owned an internal lead-generation tool end to end — a Python (FastAPI) and React application scraping Ghanaian business directories and enriching records via the Google Places API.",
         responsibilities: [
             "Built a web scraper against Ghanaian business directories to extract company records at scale",
