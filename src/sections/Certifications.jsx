@@ -55,28 +55,56 @@ const Certifications = () => {
                                 {category}
                             </h3>
                             <div className="grid-3-cols">
-                                {items.map((cert) => (
-                                    <HoverGlowCard
-                                        key={cert.name}
-                                        className="cert-card rounded-xl p-6 flex items-center gap-4"
-                                    >
-                                        <img
-                                            src={cert.badge}
-                                            alt={`${cert.name} badge`}
-                                            className="size-16 shrink-0"
-                                        />
-                                        <div className="flex flex-col gap-1">
-                                            <h4 className="text-white font-semibold leading-snug">
-                                                {cert.name}
-                                            </h4>
-                                            <p className="text-white-50 text-sm">{cert.issuer}</p>
-                                            <p className="text-[#839CB5] text-sm">
-                                                {cert.status === "in-progress" ? "In progress" : cert.date}
-                                                {cert.detail && ` · ${cert.detail}`}
-                                            </p>
-                                        </div>
-                                    </HoverGlowCard>
-                                ))}
+                                {items.map((cert) => {
+                                    const dateLabel = cert.status === "in-progress" ? "In progress" : cert.date;
+                                    const content = (
+                                        <>
+                                            <img
+                                                src={cert.badge}
+                                                alt={`${cert.issuer} logo`}
+                                                className="size-16 shrink-0"
+                                            />
+                                            <div className="flex flex-col gap-1">
+                                                <h4 className="text-white font-semibold leading-snug">
+                                                    {cert.name}
+                                                </h4>
+                                                <p className="text-white-50 text-sm">{cert.issuer}</p>
+                                                {(dateLabel || cert.detail) && (
+                                                    <p className="text-[#839CB5] text-sm">
+                                                        {dateLabel}
+                                                        {dateLabel && cert.detail && " · "}
+                                                        {cert.detail}
+                                                    </p>
+                                                )}
+                                                {cert.verifyUrl && (
+                                                    <span className="text-white-50 text-sm underline underline-offset-2">
+                                                        Verify on Credly
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </>
+                                    );
+
+                                    return cert.verifyUrl ? (
+                                        <HoverGlowCard
+                                            key={cert.name}
+                                            as="a"
+                                            href={cert.verifyUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="cert-card rounded-xl p-6 flex items-center gap-4 hover:border-white-50 transition-colors duration-300"
+                                        >
+                                            {content}
+                                        </HoverGlowCard>
+                                    ) : (
+                                        <HoverGlowCard
+                                            key={cert.name}
+                                            className="cert-card rounded-xl p-6 flex items-center gap-4"
+                                        >
+                                            {content}
+                                        </HoverGlowCard>
+                                    );
+                                })}
                             </div>
                         </div>
                     ))}

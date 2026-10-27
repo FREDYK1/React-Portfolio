@@ -42,30 +42,44 @@ export const navLinks = [
 // Turntabl still uses a placeholder wordmark (no official brand asset
 // was supplied). To swap it for the real logo, see
 // public/images/logos/PLACEHOLDER-LOGOS.md.
+//
+// `url`, where present, links the logo to the company's site. This
+// sandbox's network couldn't verify these are still live (outbound
+// access is locked to a short allowlist) — confirm amalitech.com,
+// turntabl.io and touchstacktechnologies.com resolve correctly.
+// No distinct public site was found for "Solution Space" (it reads as
+// an internal team name within the EDBLINKX engagement, not a
+// separate company) and Aurora Software Labs' own corporate site
+// wasn't confirmed, so its logo links to ShopAurora, its product.
 export const logos = [
     {
         imgPath: "/images/logos/amalitech-logo.png",
-        alt: "AmaliTech Ghana Ltd"
+        alt: "AmaliTech Ghana Ltd",
+        url: "https://www.amalitech.com",
     },
     {
         imgPath: "/images/logos/aurora-logo.png",
-        alt: "Aurora Software Labs"
+        alt: "Aurora Software Labs",
+        url: "https://shopaurora.africa",
     },
     {
         imgPath: "/images/logos/turntabl-logo.svg",
-        alt: "Turntabl"
+        alt: "Turntabl",
+        url: "https://turntabl.io",
     },
     {
         imgPath: "/images/logos/solution-space-logo.svg",
-        alt: "Solution Space"
+        alt: "Solution Space",
     },
     {
         imgPath: "/images/logos/edblinkx.svg",
-        alt: "EDBLINKX Empire Limited"
+        alt: "EDBLINKX Empire Limited",
+        url: "https://edblinkxempirelimited.netlify.app",
     },
     {
         imgPath: "/images/logos/touchstack-logo.svg",
-        alt: "TouchStack Technologies"
+        alt: "TouchStack Technologies",
+        url: "https://touchstacktechnologies.com",
     },
 ]
 
@@ -190,9 +204,10 @@ export const techStackIcons = [
 ]
 
 // Certifications, most recent first. status: "completed" | "in-progress"
-// The `badge` images are placeholder icons, not the issuers' real badges
-// (no official assets were supplied). To swap in the real badges, see
-// public/images/certs/PLACEHOLDER-BADGES.md.
+// `badge` is the issuer's brand logo (Google/Cisco are hand-built SVG
+// recreations — this environment couldn't reach Credly or any icon CDN
+// to pull the exact artwork; see public/images/certs/PLACEHOLDER-BADGES.md).
+// `verifyUrl`, where present, is the real public Credly verification link.
 export const certifications = [
     {
         name: "AWS Certified Cloud Practitioner (CLF-C02)",
@@ -202,21 +217,23 @@ export const certifications = [
         category: "Cloud",
         badge: "/images/certs/aws-ccp-badge.svg",
         status: "completed",
+        verifyUrl: "https://www.credly.com/badges/07f6d328-14d6-420f-abdc-c142014d712b/public_url",
     },
     {
         name: "Google Cybersecurity Professional Certificate",
         issuer: "Google",
         date: "May 2026",
         category: "Security",
-        badge: "/images/certs/google-cybersecurity-badge.svg",
+        badge: "/images/certs/google-logo.svg",
         status: "completed",
+        verifyUrl: "https://www.credly.com/badges/a977c51c-e3a7-457e-bf33-9b2e8fe199c5/public_url",
     },
     {
         name: "Google IT Support Professional Certificate",
         issuer: "Google",
         date: "2026",
         category: "IT & Support",
-        badge: "/images/certs/google-itsupport-badge.svg",
+        badge: "/images/certs/google-logo.svg",
         status: "completed",
     },
     {
@@ -224,8 +241,24 @@ export const certifications = [
         issuer: "Cisco",
         date: "Jan 2026",
         category: "Networking",
-        badge: "/images/certs/cisco-network-badge.svg",
+        badge: "/images/certs/cisco-logo.svg",
         status: "completed",
+    },
+    {
+        name: "Introduction to Cybersecurity",
+        issuer: "Cisco",
+        category: "Security",
+        badge: "/images/certs/cisco-logo.svg",
+        status: "completed",
+        verifyUrl: "https://www.credly.com/badges/f167e8fc-79ff-4128-a6cf-af4f3979c77b/public_url",
+    },
+    {
+        name: "Penetration Testing",
+        issuer: "Cisco",
+        date: "In progress",
+        category: "Security",
+        badge: "/images/certs/cisco-logo.svg",
+        status: "in-progress",
     },
     {
         name: "AWS Educate Cloud Badge",
@@ -234,6 +267,7 @@ export const certifications = [
         category: "Cloud",
         badge: "/images/certs/aws-educate-badge.svg",
         status: "completed",
+        verifyUrl: "https://www.credly.com/badges/9ae0b60b-092a-47be-aebf-e32285ab9496/public_url",
     },
     {
         name: "TryHackMe SAL1 (Security Analyst Level 1)",
@@ -333,18 +367,20 @@ export const projects = {
             tags: ["Penetration Testing", "Scoping", "Rules of Engagement"],
             docsUrl: "https://drive.google.com/drive/folders/1KtgZPi-OjWB6dKI4Y5ZG8tyg-RhkbmGb?usp=sharing",
         },
-        {
-            title: "FraudShield — On-Device Anti-Scam Widget",
-            date: "2026",
-            description: "A floating Android widget that flags likely scam messages in real time using a small language model (Gemma) running entirely on-device, so no message data leaves the handset. Targets mobile money fraud, a high-volume attack vector in Ghana.",
-            tags: ["Android", "On-Device AI", "Gemma", "Mobile Security"],
-        },
-        {
-            title: "Sankofa — Winner, AWS Hackathon 2026",
-            date: "2026",
-            description: "A cloud-hosted patient feedback platform accepting voice or text, widening participation across literacy levels and giving hospitals actionable service-gap data.",
-            tags: ["AWS", "Healthcare", "Accessibility"],
-        },
+        // Commented out — no live site or repo link yet. Add a liveUrl,
+        // repoUrl, or docsUrl and uncomment to bring it back.
+        // {
+        //     title: "FraudShield — On-Device Anti-Scam Widget",
+        //     date: "2026",
+        //     description: "A floating Android widget that flags likely scam messages in real time using a small language model (Gemma) running entirely on-device, so no message data leaves the handset. Targets mobile money fraud, a high-volume attack vector in Ghana.",
+        //     tags: ["Android", "On-Device AI", "Gemma", "Mobile Security"],
+        // },
+        // {
+        //     title: "Sankofa — Winner, AWS Hackathon 2026",
+        //     date: "2026",
+        //     description: "A cloud-hosted patient feedback platform accepting voice or text, widening participation across literacy levels and giving hospitals actionable service-gap data.",
+        //     tags: ["AWS", "Healthcare", "Accessibility"],
+        // },
     ],
     "Software Engineering": [
         {
@@ -364,12 +400,14 @@ export const projects = {
             tags: ["Next.js", "REST APIs", "PostgreSQL"],
             liveUrl: "https://shopaurora.africa",
         },
-        {
-            title: "Hospital & Clinic Operations Optimizer",
-            date: "2026",
-            description: "Custom implementations of core data structures and algorithms (linked lists, heaps, trees, graphs) from scratch in Java, without built-in Java collections. Planning and Delivery Lead of a 15-person team.",
-            tags: ["Java", "Data Structures & Algorithms"],
-        },
+        // Commented out — no live site or repo link yet. Add a liveUrl,
+        // repoUrl, or docsUrl and uncomment to bring it back.
+        // {
+        //     title: "Hospital & Clinic Operations Optimizer",
+        //     date: "2026",
+        //     description: "Custom implementations of core data structures and algorithms (linked lists, heaps, trees, graphs) from scratch in Java, without built-in Java collections. Planning and Delivery Lead of a 15-person team.",
+        //     tags: ["Java", "Data Structures & Algorithms"],
+        // },
         {
             title: "Holy Child Custom Framing App",
             date: "Nov 2025 – Jan 2026",

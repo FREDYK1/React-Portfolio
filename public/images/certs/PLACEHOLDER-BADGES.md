@@ -1,28 +1,32 @@
-# Placeholder certification badges
+# Certification badges & logos
 
-All six files in this folder are simple colored-circle placeholders, not the
-issuers' real certification badges — no official badge images were available
-when this was built:
+| File | Used for | What it is |
+|---|---|---|
+| `aws-ccp-badge.svg` | AWS Certified Cloud Practitioner (CLF-C02) | Hand-drawn placeholder (AWS colors, not the real badge) |
+| `aws-educate-badge.svg` | AWS Educate Cloud Badge | Hand-drawn placeholder |
+| `google-logo.svg` | Google Cybersecurity Professional Certificate, Google IT Support Professional Certificate | Hand-built recreation of Google's 4-color mark (not an exact trace — see below) |
+| `cisco-logo.svg` | Network Architecture Fundamentals, Introduction to Cybersecurity, Penetration Testing | Hand-built recreation of Cisco's bar/bridge mark (not an exact trace — see below) |
+| `tryhackme-badge.svg` | TryHackMe SAL1 | Hand-drawn placeholder, dashed border (in progress) |
 
-| File | Certification |
-|---|---|
-| `aws-ccp-badge.svg` | AWS Certified Cloud Practitioner (CLF-C02) |
-| `aws-educate-badge.svg` | AWS Educate Cloud Badge |
-| `google-cybersecurity-badge.svg` | Google Cybersecurity Professional Certificate |
-| `google-itsupport-badge.svg` | Google IT Support Professional Certificate |
-| `cisco-network-badge.svg` | Cisco Network Architecture Fundamentals |
-| `tryhackme-badge.svg` | TryHackMe SAL1 |
+## Why these aren't the real artwork
 
-## To replace one
+This environment's outbound network is locked down to a short allowlist (package
+registries, GitHub, the Anthropic API) — it can't reach `credly.com`, any icon CDN
+(`cdn.jsdelivr.net`, etc.), or general websites. So the real Credly badge images
+given for several certifications, and any official Google/Cisco logo file, were
+not fetchable from here. `google-logo.svg` and `cisco-logo.svg` are built from
+scratch (plain geometry — arcs and bars — not traced from an official asset), good
+enough to read clearly as "Google" / "Cisco" but not a pixel copy of the brand
+guidelines file.
 
-Most of these certifications provide an official badge image via
-[Credly](https://www.credly.com/) or the issuer's own certificate page —
-download the PNG/SVG they give you for each credential.
+## To replace one with the real thing
 
-1. Save the real badge image into this folder, **keeping the same filename**
-   (e.g. a new `aws-ccp-badge.svg` or `aws-ccp-badge.png`).
-2. If it uses a different file extension than the placeholder, update the
-   matching `badge` value in `src/constants/index.js` (search for
-   `certifications` — each entry has a `badge: "/images/certs/..."` field) to
-   point at the new filename. Same filename + same extension needs no code
-   change at all.
+1. Open the cert's `verifyUrl` in `src/constants/index.js` (the Credly page), or
+   download the official brand asset from Google's/Cisco's press/brand page.
+2. Save the image over the existing file, **keeping the same filename** — e.g. a
+   new `google-logo.svg` (or `.png`).
+3. If the replacement uses a different extension, update the matching `badge`
+   value(s) in `src/constants/index.js` (search for the filename without its
+   extension — several certifications share `google-logo.svg` / `cisco-logo.svg`,
+   so one replacement file updates all of them at once unless you give each its
+   own file and path).
