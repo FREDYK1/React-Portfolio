@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Google logo">
+  <circle cx="60" cy="60" r="58" fill="#FFFFFF"/>
+  <path d="M60,60 L60,10 A50,50 0 0,1 110,60 Z" fill="#4285F4"/>
+  <path d="M60,60 L110,60 A50,50 0 0,1 60,110 Z" fill="#34A853"/>
+  <path d="M60,60 L60,110 A50,50 0 0,1 10,60 Z" fill="#FBBC05"/>
+  <path d="M60,60 L10,60 A50,50 0 0,1 60,10 Z" fill="#EA4335"/>
+  <circle cx="60" cy="60" r="22" fill="#FFFFFF"/>
+</svg>

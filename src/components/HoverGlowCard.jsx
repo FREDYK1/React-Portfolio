@@ -4,7 +4,8 @@ import { useRef } from "react";
 // the experience timeline (see GlowCard.jsx), for reuse anywhere a plain
 // card-border box wants the same hover treatment. Deliberately independent
 // of GlowCard so the experience timeline's markup/behaviour stays untouched.
-const HoverGlowCard = ({ children, className = "" }) => {
+const HoverGlowCard = ({ children, className = "", as, ...rest }) => {
+  const Tag = as || "div";
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -22,14 +23,15 @@ const HoverGlowCard = ({ children, className = "" }) => {
   };
 
   return (
-    <div
+    <Tag
       ref={cardRef}
       onMouseMove={handleMouseMove}
       className={`card card-border overflow-hidden ${className}`}
+      {...rest}
     >
       <div className="glow" />
       {children}
-    </div>
+    </Tag>
   );
 };
 

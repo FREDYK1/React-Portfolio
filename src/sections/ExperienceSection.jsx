@@ -8,6 +8,15 @@ import GlowCard from "../components/GlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const CompanyLogo = ({ card, style }) => {
+  const img = <img src={card.logoPath} alt={`${card.company} logo`} style={style} />;
+  return card.companyUrl ? (
+    <a href={card.companyUrl} target="_blank" rel="noopener noreferrer">
+      {img}
+    </a>
+  ) : img;
+};
+
 const Experience = () => {
   useGSAP(() => {
     // Loop through each timeline card and animate them in
@@ -106,7 +115,7 @@ const Experience = () => {
                 <div className="xl:w-2/6">
                   <GlowCard card={card}>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <img src={card.logoPath} alt={`${card.company} logo`} style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
+                      <CompanyLogo card={card} style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
                     </div>
                   </GlowCard>
                 </div>
@@ -118,7 +127,7 @@ const Experience = () => {
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                       <div className="timeline-logo">
-                        <img src={card.logoPath} alt={`${card.company} logo`} />
+                        <CompanyLogo card={card} />
                       </div>
                       <div>
                         <h3 className="font-semibold text-3xl">{card.title}</h3>
