@@ -331,6 +331,7 @@ export const projects = {
             date: "Aug 2026",
             description: "A full pre-engagement scope worksheet and rules-of-engagement document for an internal penetration test: scope boundaries, authorisation chain, testing windows, escalation contacts and out-of-scope systems.",
             tags: ["Penetration Testing", "Scoping", "Rules of Engagement"],
+            docsUrl: "https://drive.google.com/drive/folders/1KtgZPi-OjWB6dKI4Y5ZG8tyg-RhkbmGb?usp=sharing",
         },
         {
             title: "FraudShield — On-Device Anti-Scam Widget",
@@ -344,12 +345,6 @@ export const projects = {
             description: "A cloud-hosted patient feedback platform accepting voice or text, widening participation across literacy levels and giving hospitals actionable service-gap data.",
             tags: ["AWS", "Healthcare", "Accessibility"],
         },
-        {
-            title: "FloodGuard",
-            date: "2026",
-            description: "A flood alert and early-warning tool built on AWS generative AI services during the AWS re/Start programme's hackathon.",
-            tags: ["AWS", "Generative AI", "Early Warning"],
-        },
     ],
     "Software Engineering": [
         {
@@ -358,6 +353,9 @@ export const projects = {
             role: "Team Lead · 6-Person AmaliTech Team",
             description: "A virtual queue for walk-in services: scan a QR code, get a live wait estimate and an SMS when your turn nears. Led the team and designed its anti-queue-jumping control — rotating, single-use QR tokens.",
             tags: ["Team Lead", "Requirements", "Threat Modelling", "JWT", "WebSockets"],
+            liveUrl: "https://q-flow-one-jade.vercel.app",
+            repoUrl: "https://github.com/Q-Flow-Team/q-flow",
+            docsUrl: "https://drive.google.com/drive/folders/1ul-GVDrBTe2zAh65Crg8imbipZz7Vrq0?usp=sharing",
         },
         {
             title: "ShopAurora",
@@ -373,17 +371,12 @@ export const projects = {
             tags: ["Java", "Data Structures & Algorithms"],
         },
         {
-            title: "Holy Child Fundraising Platform",
+            title: "Holy Child Custom Framing App",
             date: "Nov 2025 – Jan 2026",
-            description: "A Next.js frame generator with Paystack payment integration for secure online donations during a school anniversary campaign.",
-            tags: ["Next.js", "Paystack"],
+            description: "A Next.js photo-framing app built for Holy Child College of Education's 80th Anniversary: upload a portrait, position it in a Classic or Anniversary frame, pay by mobile money via Paystack, and download a print-ready composite.",
+            tags: ["Next.js", "TypeScript", "Tailwind CSS", "Paystack", "Canvas API"],
             liveUrl: "https://holy-child-kappa.vercel.app",
-        },
-        {
-            title: "Engineer Title Management System",
-            date: "Oct – Nov 2025",
-            description: "Turntabl capstone: a full-stack CRUD system (Next.js, Spring Boot, PostgreSQL) with migrations, REST APIs and a full test suite.",
-            tags: ["Next.js", "Spring Boot", "PostgreSQL"],
+            repoUrl: "https://github.com/FREDYK1/Holy-Child",
         },
         {
             title: "Car Brokerage & Real Estate Platform",
@@ -393,10 +386,20 @@ export const projects = {
             liveUrl: "https://edblinkxempirelimited.netlify.app",
         },
         {
-            title: "Google Maps Business Scraper",
-            date: "May – Aug 2025",
-            description: "An internal lead-generation tool built at Touch Stack Technologies: scrapes Ghanaian business directories and enriches records via the Google Places API, usable as a web app or CLI.",
-            tags: ["Python", "FastAPI", "React", "Google Places API"],
+            title: "TruthLens",
+            date: "2026",
+            role: "12-Person DCIT 318 Team Project",
+            description: "A misinformation screener for viral claims and headlines: an ML.NET multiclass classifier scores a claim's credibility, a source-reputation lookup flags how trustworthy a domain is, and the community can flag claims as circulating, debunked or misleading.",
+            tags: ["Blazor WebAssembly", ".NET 9", "ML.NET", "EF Core", "SQLite"],
+            repoUrl: "https://github.com/emmanuelcobbinah007/TruthLens",
+        },
+        {
+            title: "TidyCrew",
+            date: "2026",
+            description: "A marketing and lead-generation site for a Coventry, UK commercial cleaning company — office, commercial, window and medical-facility cleaning — with an instant quote-request form wired to a serverless backend.",
+            tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase"],
+            liveUrl: "https://tidycrewcleaningservices.co.uk",
+            repoUrl: "https://github.com/FREDYK1/tidy-crew-brand",
         },
     ],
 };
